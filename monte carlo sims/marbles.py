@@ -7,7 +7,7 @@ def simulateDraw(red_marbles,white_marbles,string_size):
     while total_marbles > 0:
 
         drawn_marble = random.randint(1,total_marbles)
-        if drawn_marble < red_marbles:
+        if drawn_marble <= red_marbles:
             red_marbles -= 1
             white_count = 0
         else:
@@ -22,7 +22,7 @@ def simulateDraw(red_marbles,white_marbles,string_size):
 
     return False
 
-numberOfRuns = 10*1000
+numberOfRuns = 100*1000
 numberOfSuccesses = 0
 
 red_marbles = 200
@@ -35,3 +35,4 @@ for i in xrange(numberOfRuns):
 
 print "You tried a case with", white_marbles, "white marbles and", red_marbles, "red marbles, seeking a string of", string_size, "white marbles."
 print "There were", numberOfSuccesses, "successes in", numberOfRuns, "runs for a chance of", (1.0*numberOfSuccesses)/(1.0*numberOfRuns)
+        
